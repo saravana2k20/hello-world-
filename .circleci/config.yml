@@ -25,6 +25,33 @@ jobs:
       - run:
           name: "Say Bye"
           command: "echo Hello, Team!"
+  good-morning:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run:
+          name : "Say Good Morning"
+          command : "echo Good Morning, Everyone!"
+  
+  good-evening:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run:
+          name : "Say Good Evening"
+          command : "echo Good Evening, Everyone!"
+  
+  good-afternoon:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout 
+      - run:
+          name : "Say Good Afternoon"
+          command : "echo Good Afernoon"
+  
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
