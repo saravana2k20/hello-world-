@@ -59,7 +59,19 @@ workflows:
   greeting-workflow:
     jobs:
       - say-hello
+      - good-morning:
+          requires:
+            - say-hello
+      - good-afternoon:
+          requires:
+            - say-hello
+      - good-evening:
+          requires:
+            - say-hello
       - say-bye:
           requires:
-          - say-hello
+            - good-morning
+            - good-afternoon
+            - good-evening
+
            
